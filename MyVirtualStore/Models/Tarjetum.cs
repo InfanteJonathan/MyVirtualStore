@@ -12,4 +12,5 @@ public partial class Tarjetum
     public string? Numero { get; set; }
 
     public virtual ICollection<Pedido> Pedidos { get; set; } = new List<Pedido>();
+  
 }

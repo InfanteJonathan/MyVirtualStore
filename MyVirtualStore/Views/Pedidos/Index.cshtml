@@ -1,0 +1,33 @@
+﻿@model IEnumerable<MyVirtualStore.Models.Pedido>;
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Lista de Pedidos</h1>
+<hr />
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>ID Cliente</th>
+            <th>ID Tarjeta</th>
+            <th>Fecha/Hora</th>
+            <th>Estado</th>
+            <th>Total</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.IdClienteNavigation?.Nombres</td>
+                <td>@item.IdTarjetaNavigation?.Marca</td>
+                <td>@item.FechaHora</td>
+                <td>@item.Estado</td>
+                <td>@item.Total</td>
+            </tr>
+        }
+    </tbody>
+</table>
